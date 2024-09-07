@@ -1,6 +1,13 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
 
-router = APIRouter()
+from datetime import timedelta
+from typing import Annotated, Any
+
+router = APIRouter(
+    prefix="/admin",
+    tags=["admin"],
+    responses={404: {"description": "Not found"}},
+)
 
 
 @router.post("/admin/login", tags=["admin"])
