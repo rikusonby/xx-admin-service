@@ -3,11 +3,7 @@ from fastapi import APIRouter, Depends
 from datetime import timedelta
 from typing import Annotated, Any
 
-router = APIRouter(
-    prefix="/admin",
-    tags=["admin"],
-    responses={404: {"description": "Not found"}},
-)
+router = APIRouter()
 
 
 @router.post("/admin/login", tags=["admin"])
